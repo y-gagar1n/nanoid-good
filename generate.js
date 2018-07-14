@@ -1,11 +1,4 @@
 var generate = require('nanoid/generate');
-var Filter = require('bad-words');
+var filter = require('./filter');
 
-module.exports = function () {
-    var filter = new Filter();
-
-    while (true) {
-        var id = generate.apply(this, arguments);
-        if (!filter.isProfane(id)) return id; 
-    }
-};
+module.exports = filter(generate);
