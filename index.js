@@ -5,7 +5,7 @@ module.exports = function () {
     var filter = new Filter();
 
     while (true) {
-        var id = nanoid()
+        var id = nanoid.apply(this, arguments);
         if (!filter.isProfane(id)) return id; 
     }
 };
