@@ -1,6 +1,6 @@
 {
   "name": "nanoid-good",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Filters profanity in ids generated with nanoid",
   "main": "index.js",
   "scripts": {
