@@ -1,4 +1,6 @@
 var Filter = require('bad-words');
+var en = require('naughty-words/en.json');
+
 
 module.exports = function (fn) {
     return function () {

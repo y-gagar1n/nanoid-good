@@ -1,4 +1,4 @@
 var nonSecure = require('nanoid/non-secure');
-var filter = require('./filter');
+var wrapper = require('./wrapper');
 
-module.exports = filter(nonSecure);
+module.exports = wrapper(nonSecure);
