@@ -5,5 +5,9 @@ it('returns false on innocent id', function() {
 });
 
 it('returns true on bad word', function() {
-    expect(filter("sex")).toEqual(true);
+    expect(filter("aSs")).toEqual(true);
 });
+
+it('returns true on bad word in between of larger word', function() {
+    expect(filter("abcaSsqwe")).toEqual(true);
+})
