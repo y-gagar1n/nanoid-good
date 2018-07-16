@@ -2,9 +2,7 @@ var langs = ["en", "ar", "cs", "da", "de", "eo",
              "es", "fa", "fi", "fr", "hi", "hu", 
              "it", "ja", "ko", "nl", "no", "pl", 
              "pt", "ru", "sv", "th", "tlh", "tr", 
-             "zh"];
-// var en = require("naughty-words/en.json");
-// var de = require("naughty-words/de.json");
+             "zh", "fr-CA-u-sd-caqc"];
 
 var list = langs.map(lang => require("naughty-words/" + lang + ".json"));
 
