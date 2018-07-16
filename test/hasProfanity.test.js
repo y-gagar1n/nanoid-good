@@ -10,4 +10,8 @@ it('returns true on bad word', function() {
 
 it('returns true on bad word in between of larger word', function() {
     expect(hasProfanity("abcaSsqwe")).toEqual(true);
-})
+});
+
+it('returns true on bad word in non-english', function() {
+    expect(hasProfanity("arScH")).toEqual(true);
+});
