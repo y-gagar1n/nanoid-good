@@ -28,3 +28,15 @@ var id1 = format(random, "abcdef", 5);
 var id2 = generate("1234567abcdef", 10);
 var id3 = nonSecure();
 ```
+
+## How it works
+
+It checks every generated ID through a vocabulary of obscene words. If any match is found, then ID is generated again and again until it gets clean ID which is returned.
+
+It finds bad words with mixed registry and words which are hidden in between other letters. 
+
+For example:
+
+`Uakgb_J5m9g~0JDMpoRnqLJ`
+
+This one will be considered a bad words because of `poRn` hidden near the end.
