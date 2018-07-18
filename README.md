@@ -14,6 +14,7 @@ npm install nanoid-good
 
 ```js
 var nanoid = require("nanoid-good");
+require("nanoid-good/locale/en"); // you should add locale of your preferred language
 var id = nanoid(); //=> "V1StGXR8_Z5jdHi6B~myT"
 ```
 
@@ -23,6 +24,7 @@ All additional functions of **Nano ID** are supported too:
 var format = require("nanoid-good/format");
 var generate = require("nanoid-good/generate");
 var nonSecure = require("nanoid-good/non-secure");
+require("nanoid-good/locale/en");
 
 var id1 = format(random, "abcdef", 5);
 var id2 = generate("1234567abcdef", 10);
@@ -31,7 +33,7 @@ var id3 = nonSecure();
 
 ## Localization
 
-If you want to look for bad words in language other than english, you can add one or more locales:
+If you want to look for bad words in other languages, you can add their corresponding locales:
 
 ```js
 var nanoid = require("nanoid-good");

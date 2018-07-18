@@ -2,6 +2,7 @@ var nanoidGood = require('../')
 var format = require('../format')
 var generate = require('../generate')
 var nonSecure = require('../non-secure')
+require("../locale/en");
 
 it('default doesnt throw', function () {
     var id = nanoidGood();

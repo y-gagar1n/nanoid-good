@@ -1,4 +1,5 @@
 var hasProfanity = require('../hasProfanity');
+require("../locale/en");
 
 it('returns false on innocent id', function() {
     expect(hasProfanity("qwerty")).toEqual(false);

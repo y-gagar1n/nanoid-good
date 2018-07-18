@@ -1,4 +1,4 @@
-var list = [ require("naughty-words/en.json")];
+var list = [];
 
 function checkByList(input, bad_words) {
     for (var i = 0; i < bad_words.length; i++) {
@@ -7,14 +7,19 @@ function checkByList(input, bad_words) {
     return false;
 }
 
-var hasProfanity = function(input) {
+var hasProfanity = function (input) {
+    if (list.length == 0)
+    {
+        console.warn("No locales were added to nanoid-good. Maybe you forgot to add `require('nanoid-good/locale/en')`?")
+        return false;
+    }
     for (var i = 0; i < list.length; i++) {
         if (checkByList(input, list[i])) return true;
     }
     return false;
 };
 
-hasProfanity.__proto__.addLocale = function(locale) {
+hasProfanity.__proto__.addLocale = function (locale) {
     list.push(locale);
 }
 
