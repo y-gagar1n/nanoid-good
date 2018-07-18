@@ -1,10 +1,4 @@
-var langs = ["en", "ar", "cs", "da", "de", "eo", 
-             "es", "fa", "fi", "fr", "hi", "hu", 
-             "it", "ja", "ko", "nl", "no", "pl", 
-             "pt", "ru", "sv", "th", "tlh", "tr", 
-             "zh", "fr-CA-u-sd-caqc"];
-
-var list = langs.map(lang => require("naughty-words/" + lang + ".json"));
+var list = [ require("./locale/en")];
 
 function checkByList(input, bad_words) {
     for (var i = 0; i < bad_words.length; i++) {
@@ -13,9 +7,15 @@ function checkByList(input, bad_words) {
     return false;
 }
 
-module.exports = function (input) {
+var hasProfanity = function(input) {
     for (var i = 0; i < list.length; i++) {
         if (checkByList(input, list[i])) return true;
     }
     return false;
 };
+
+hasProfanity.__proto__.defineLocale = function(locale) {
+    list.push(locale);
+}
+
+module.exports = hasProfanity;

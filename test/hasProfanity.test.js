@@ -13,5 +13,7 @@ it('returns true on bad word in between of larger word', function() {
 });
 
 it('returns true on bad word in non-english', function() {
+    require("../locale/de");
+    hasProfanity.locale("de");
     expect(hasProfanity("arScH")).toEqual(true);
 });

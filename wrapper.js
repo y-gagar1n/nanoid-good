@@ -1,7 +1,7 @@
-var hasProfanity = require("./hasProfanity")
+var hasProfanity = require("./hasProfanity").default
 
 
-module.exports = function (fn) {
+var wrapper = function (fn) {
     return function () {
         while (true) {
             var id = fn.apply(this, arguments);
@@ -9,3 +9,7 @@ module.exports = function (fn) {
         }
     };
 };
+
+wrapper.__proto__.defineLocale = function(locale) { hasProfanity.defineLocale(locale);}
+
+module.exports = wrapper;
