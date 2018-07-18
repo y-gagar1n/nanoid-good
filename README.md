@@ -39,4 +39,4 @@ For example:
 
 `Uakgb_J5m9g~0JDMpoRnqLJ`
 
-This one will be considered a bad words because of `poRn` hidden near the end.
+This one will be considered a bad word because of `poRn` hidden near the end.
