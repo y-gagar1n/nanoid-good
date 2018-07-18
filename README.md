@@ -28,3 +28,13 @@ var id1 = format(random, "abcdef", 5);
 var id2 = generate("1234567abcdef", 10);
 var id3 = nonSecure();
 ```
+
+## Localization
+
+If you want to look for bad words in language other than english, you can add one or more locales:
+
+```js
+var nanoid = require("nanoid-good");
+require("nanoid-good/locale/de");
+require("nanoid-good/locale/ru");
+```
