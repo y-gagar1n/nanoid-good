@@ -1,4 +1,4 @@
-var list = [ require("./locale/en")];
+var list = [ require("naughty-words/en.json")];
 
 function checkByList(input, bad_words) {
     for (var i = 0; i < bad_words.length; i++) {
@@ -14,8 +14,8 @@ var hasProfanity = function(input) {
     return false;
 };
 
-hasProfanity.__proto__.defineLocale = function(locale) {
+hasProfanity.__proto__.addLocale = function(locale) {
     list.push(locale);
 }
 
-module.exports = hasProfanity;
+module.exports = global.hasProfanity || (global.hasProfanity = hasProfanity);
