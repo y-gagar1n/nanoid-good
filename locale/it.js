@@ -1,2 +1,2 @@
-global.hasProfanity &&
-    global.hasProfanity.addLocale(require("naughty-words/it.json"))
+
+module.exports = require("naughty-words/it.json");
