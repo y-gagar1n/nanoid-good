@@ -1,4 +1,4 @@
 var generate = require('nanoid/generate');
-var filter = require('./filter');
+var wrapper = require('./wrapper');
 
-module.exports = filter(generate);
+module.exports = wrapper(generate);

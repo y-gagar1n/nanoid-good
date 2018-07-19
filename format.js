@@ -1,4 +1,4 @@
 var format = require('nanoid/format');
-var filter = require('./filter');
+var wrapper = require('./wrapper');
 
-module.exports = filter(format);
+module.exports = wrapper(format);

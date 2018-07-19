@@ -1,4 +1,4 @@
 var nanoid = require('nanoid');
-var filter = require('./filter');
+var wrapper = require('./wrapper');
 
-module.exports = filter(nanoid);
+module.exports = wrapper(nanoid);
