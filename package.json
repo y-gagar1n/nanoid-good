@@ -1,6 +1,6 @@
 {
   "name": "nanoid-good",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Obscene words filter for nanoid",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "author": "y-gagar1n",
   "license": "ISC",
   "dependencies": {
-    "bad-words": "^1.6.1",
     "nanoid": "^1.1.0",
     "naughty-words": "^1.0.2"
   },
@@ -23,7 +22,9 @@
     "jest": "^23.4.1",
     "size-limit": "^0.18.5"
   },
-  "size-limit": [{
-    "path": "index.js"
-  }]
+  "size-limit": [
+    {
+      "path": "index.js"
+    }
+  ]
 }
