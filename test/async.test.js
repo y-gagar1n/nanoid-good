@@ -2,7 +2,6 @@ var en = require('../locale/en');
 var nanoidGood = require('../async/')(en)
 var format = require('../async/format')(en)
 var generate = require('../async/generate')(en)
-var nonSecure = require('../non-secure')(en)
 
 it('default doesnt throw', function () {
     return nanoidGood().then(function(id) {
@@ -37,8 +36,3 @@ it('generate doesnt throw', function () {
         expect(typeof id).toEqual('string');
     });
 });
-
-// it('nonSecure doesnt throw', function () {
-//     var id = nonSecure();
-//     expect(typeof id).toEqual('string')
-// });
