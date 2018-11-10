@@ -15,7 +15,7 @@
   "author": "y-gagar1n",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^1.1.0",
+    "nanoid": "^2.0.0",
     "naughty-words": "^1.0.2"
   },
   "devDependencies": {
