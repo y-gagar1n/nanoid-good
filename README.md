@@ -4,6 +4,18 @@ Guarantees you will not get any obscene words or other profanity in your ids gen
 
 This is a drop-in replacement for **Nano ID** which means you can just change the name of imported package from `nanoid` to `nanoid-good`.
 
+## How it works
+
+It checks every generated ID through a vocabulary of obscene words. If any match is found, then ID is generated again and again until it gets clean ID which is returned.
+
+It finds bad words with mixed registry and words which are hidden in between other letters.
+
+For example:
+
+`Uakgb_J5m9g~0JDMpoRnqLJ`
+
+This one will be considered a bad word because of `poRn` hidden near the end.
+
 ## Installation
 
 ```shell
@@ -53,15 +65,3 @@ var id1 = nanoid();
 var id2 = format(random, "abcdef", 5);
 var id3 = generate("1234567abcdef", 10);
 ```
-
-## How it works
-
-It checks every generated ID through a vocabulary of obscene words. If any match is found, then ID is generated again and again until it gets clean ID which is returned.
-
-It finds bad words with mixed registry and words which are hidden in between other letters.
-
-For example:
-
-`Uakgb_J5m9g~0JDMpoRnqLJ`
-
-This one will be considered a bad word because of `poRn` hidden near the end.
