@@ -61,7 +61,9 @@ var nanoid = require("nanoid-good/async")(en);
 var format = require("nanoid-good/async/format")(en);
 var generate = require("nanoid-good/async/generate")(en);
 
-var id1 = nanoid();
-var id2 = format(random, "abcdef", 5);
-var id3 = generate("1234567abcdef", 10);
+async function generateIds() {
+  var id1 = await nanoid();
+  var id2 = await format(random, "abcdef", 5);
+  var id3 = await generate("1234567abcdef", 10);
+}
 ```
