@@ -39,6 +39,21 @@ var id2 = generate("1234567abcdef", 10);
 var id3 = nonSecure();
 ```
 
+## Async
+
+You can use async versions of `nanoid` functions the same way as you use them in `nanoid`, i.e. by inserting `async` in the path import.
+
+```js
+var en = require("nanoid-good/locale/en");
+var nanoid = require("nanoid-good/async")(en);
+var format = require("nanoid-good/async/format")(en);
+var generate = require("nanoid-good/async/generate")(en);
+
+var id1 = nanoid();
+var id2 = format(random, "abcdef", 5);
+var id3 = generate("1234567abcdef", 10);
+```
+
 ## How it works
 
 It checks every generated ID through a vocabulary of obscene words. If any match is found, then ID is generated again and again until it gets clean ID which is returned.
