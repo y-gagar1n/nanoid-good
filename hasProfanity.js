@@ -1,6 +1,8 @@
 function checkByList(input, bad_words) {
     for (var i = 0; i < bad_words.length; i++) {
-        if (new RegExp(bad_words[i], "gi").test(input)) return true;
+        // Number 1 can be interpreted as l or I.
+        var sanitizedBadWord = bad_words[i].replace('l', 'i')
+        if (new RegExp(sanitizedBadWord, "gi").test(input)) return true;
     }
     return false;
 }
@@ -12,8 +14,15 @@ var hasProfanityFactory = function () {
         return false;
     }
     return function (input) {
+        var inputWithNumbersReplaced = input
+            .replace('1', 'i')
+            .replace('3', 'e')
+            .replace('5', 's')
+            .replace('8', 'b')
+            .replace('0', 'o')
+        
         for (var i = 0; i < list.length; i++) {
-            if (checkByList(input, list[i])) return true;
+            if (checkByList(inputWithNumbersReplaced, list[i])) return true;
         }
         return false;
     };
