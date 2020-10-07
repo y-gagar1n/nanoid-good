@@ -26,7 +26,7 @@ npm install nanoid-good
 
 ```js
 var en = require("nanoid-good/locale/en"); // you should add locale of your preferred language
-var nanoid = require("nanoid-good")(en);
+var nanoid = require("nanoid-good").nanonid(en);
 var id = nanoid(); //=> "V1StGXR8_Z5jdHi6B~myT"
 ```
 
@@ -35,19 +35,19 @@ You can also use several locales:
 ```js
 var en = require("nanoid-good/locale/en");
 var ru = require("nanoid-good/locale/ru");
-var nanoid = require("nanoid-good")(en, ru);
+var nanoid = require("nanoid-good").nanoid(en, ru);
 ```
 
 All additional functions of **Nano ID** are supported too:
 
 ```js
 var en = require("nanoid-good/locale/en");
-var format = require("nanoid-good/format")(en);
-var generate = require("nanoid-good/generate")(en);
-var nonSecure = require("nanoid-good/non-secure")(en);
+var customRandom = require("nanoid-good").customRandom(en);
+var customAlphabet = require("nanoid-good").customAlphabet(en);
+var nonSecure = require("nanoid-good/non-secure").nanoid(en);
 
-var id1 = format(random, "abcdef", 5);
-var id2 = generate("1234567abcdef", 10);
+var id1 = customRandom("abcdef", 5, randomFunc);
+var id2 = customAlphabet("1234567abcdef", 10);
 var id3 = nonSecure();
 ```
 
@@ -57,13 +57,13 @@ You can use async versions of `nanoid` functions the same way as you use them in
 
 ```js
 var en = require("nanoid-good/locale/en");
-var nanoid = require("nanoid-good/async")(en);
-var format = require("nanoid-good/async/format")(en);
-var generate = require("nanoid-good/async/generate")(en);
+var nanoid = require("nanoid-good/async").nanonid(en);
+var customRandom = require("nanoid-good/async").customRandom(en);
+var customAlphabet = require("nanoid-good/async").customAlphabet(en);
 
 async function generateIds() {
   var id1 = await nanoid();
-  var id2 = await format(random, "abcdef", 5);
-  var id3 = await generate("1234567abcdef", 10);
+  var id2 = await customRandom("abcdef", 5, random);
+  var id3 = await customAlphabet("1234567abcdef", 10);
 }
 ```

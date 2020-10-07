@@ -1,8 +1,8 @@
 var en = require('../locale/en');
-var nanoidGood = require('../').nanoid(en)
-var customAlphabet = require('../').customAlphabet(en)
-var customRandom = require('../').customRandom(en)
-var urlAlphabet = require('../').urlAlphabet;
+var nanoidGood = require('../non-secure').nanoid(en)
+var customAlphabet = require('../non-secure').customAlphabet(en)
+var customRandom = require('../non-secure').customRandom(en)
+var urlAlphabet = require('../non-secure').urlAlphabet;
 
 it('default doesnt throw', function () {
     var id = nanoidGood();
