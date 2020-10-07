@@ -5,6 +5,7 @@ var wrapper = function (fn) {
         return function () {
             while (true) {
                 var id = fn.apply(this, arguments);
+                console.log(id)
                 if (!hasProfanity(locales)(id)) return id;
             }
         }
