@@ -57,7 +57,7 @@ You can use async versions of `nanoid` functions the same way as you use them in
 
 ```js
 var en = require("nanoid-good/locale/en");
-var nanoid = require("nanoid-good/async").nanonid(en);
+var nanoid = require("nanoid-good/async").nanoid(en);
 var customRandom = require("nanoid-good/async").customRandom(en);
 var customAlphabet = require("nanoid-good/async").customAlphabet(en);
 
