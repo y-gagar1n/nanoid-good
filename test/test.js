@@ -1,4 +1,5 @@
 var en = require('../locale/en');
+var de = require('../locale/de');
 var nanoidGood = require('../').nanoid(en)
 var customAlphabet = require('../').customAlphabet(en)
 var customRandom = require('../').customRandom(en)
@@ -20,8 +21,15 @@ it('customAlphabet doesnt throw', function () {
     expect(typeof id).toEqual('string')
 });
 
+it('customAlphabet doesnt throw with multiple languages', function () {
+    var generator = customAlphabet("1234567abcdef", 10)
+    var id = generator();
+    expect(typeof id).toEqual('string')
+});
+
 it('urlAlphabet passes through', function () {
-    var generator = customAlphabet(urlAlphabet, 10)
+    var customAlphabetWithLanguages = require('../').customAlphabet(en, de)
+    var generator = customAlphabetWithLanguages(urlAlphabet, 10)
     var id = generator();
     expect(typeof id).toEqual('string')
 });
