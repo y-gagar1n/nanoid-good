@@ -26,7 +26,7 @@ npm install nanoid-good
 
 ```js
 var en = require("nanoid-good/locale/en"); // you should add locale of your preferred language
-var nanoid = require("nanoid-good").nanonid(en);
+var nanoid = require("nanoid-good").nanoid(en);
 var id = nanoid(); //=> "V1StGXR8_Z5jdHi6B~myT"
 ```
 
